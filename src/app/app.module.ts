@@ -1,3 +1,4 @@
+import { CategoryService } from './service/category/category.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -65,6 +66,7 @@ import { ProfuctFormComponent } from './admin/admin-products/profuct-form/profuc
   providers: [
     AuthService,
     AuthGuard,
+    CategoryService,
     AdminAuthGuard,
     UserService
   ],
