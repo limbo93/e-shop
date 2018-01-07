@@ -1,4 +1,3 @@
-import { CategoryService } from './service/category/category.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -6,6 +5,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from "@angular/forms";
 
 import { AppComponent } from './app.component';
 import { environment } from '../environments/environment';
@@ -19,12 +19,15 @@ import { MyOrdersComponent } from './my-orders/my-orders.component';
 import { AdminProductsComponent } from './admin/admin-products/admin-products.component';
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
+import { ProfuctFormComponent } from './admin/admin-products/profuct-form/profuct-form.component';
 
 import { AuthService } from './service/auth-service/auth.service';
 import { AuthGuard } from './service/auth-guard/auth.guard.service';
 import { AdminAuthGuard } from './service/admin-auth-guard/admin.auth.guard.service';
+import { CategoryService } from './service/category/category.service';
 import { UserService } from './service/user/user.service';
-import { ProfuctFormComponent } from './admin/admin-products/profuct-form/profuct-form.component';
+import { ProductService } from '../app/service/product/product.service';
+
 
 
 @NgModule({
@@ -47,6 +50,7 @@ import { ProfuctFormComponent } from './admin/admin-products/profuct-form/profuc
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
+    FormsModule,
     NgbModule.forRoot(),
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
@@ -68,6 +72,7 @@ import { ProfuctFormComponent } from './admin/admin-products/profuct-form/profuc
     AuthGuard,
     CategoryService,
     AdminAuthGuard,
+    ProductService,
     UserService
   ],
   bootstrap: [AppComponent]
