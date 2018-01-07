@@ -1,4 +1,3 @@
-import { UserService } from './service/user/user.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
@@ -22,6 +21,8 @@ import { LoginComponent } from './login/login.component';
 
 import { AuthService } from './service/auth-service/auth.service';
 import { AuthGuard } from './service/auth-guard/auth.guard.service';
+import { AdminAuthGuard } from './service/admin-auth-guard/admin.auth.guard.service';
+import { UserService } from './service/user/user.service';
 
 
 @NgModule({
@@ -54,13 +55,14 @@ import { AuthGuard } from './service/auth-guard/auth.guard.service';
       { path: 'order-success', component: OrderSuccessComponent, canActivate: [AuthGuard] },
       { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
 
-      { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard] },
-      { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard] }
+      { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard, AdminAuthGuard] },
+      { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard] }
     ])
   ],
   providers: [
     AuthService,
     AuthGuard,
+    AdminAuthGuard,
     UserService
   ],
   bootstrap: [AppComponent]
