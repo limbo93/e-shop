@@ -23,6 +23,7 @@ import { AuthService } from './service/auth-service/auth.service';
 import { AuthGuard } from './service/auth-guard/auth.guard.service';
 import { AdminAuthGuard } from './service/admin-auth-guard/admin.auth.guard.service';
 import { UserService } from './service/user/user.service';
+import { ProfuctFormComponent } from './admin/admin-products/profuct-form/profuct-form.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { UserService } from './service/user/user.service';
     MyOrdersComponent,
     AdminProductsComponent,
     AdminOrdersComponent,
-    LoginComponent
+    LoginComponent,
+    ProfuctFormComponent
   ],
   imports: [
     BrowserModule,
@@ -56,6 +58,7 @@ import { UserService } from './service/user/user.service';
       { path: 'my/orders', component: MyOrdersComponent, canActivate: [AuthGuard] },
 
       { path: 'admin/products', component: AdminProductsComponent, canActivate: [AuthGuard, AdminAuthGuard] },
+      { path: 'admin/products/new', component: ProfuctFormComponent, canActivate: [AuthGuard, AdminAuthGuard] },
       { path: 'admin/orders', component: AdminOrdersComponent, canActivate: [AuthGuard, AdminAuthGuard] }
     ])
   ],
