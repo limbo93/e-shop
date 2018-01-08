@@ -21,6 +21,7 @@ import { AdminProductsComponent } from './admin/admin-products/admin-products.co
 import { AdminOrdersComponent } from './admin/admin-orders/admin-orders.component';
 import { LoginComponent } from './login/login.component';
 import { ProfuctFormComponent } from './admin/admin-products/profuct-form/profuct-form.component';
+import { ProductFilterComponent } from './products/product-filter/product-filter.component';
 
 import { AuthService } from './service/auth-service/auth.service';
 import { AuthGuard } from './service/auth-guard/auth.guard.service';
@@ -43,7 +44,8 @@ import { ProductService } from '../app/service/product/product.service';
     AdminProductsComponent,
     AdminOrdersComponent,
     LoginComponent,
-    ProfuctFormComponent
+    ProfuctFormComponent,
+    ProductFilterComponent
   ],
   imports: [
     BrowserModule,
