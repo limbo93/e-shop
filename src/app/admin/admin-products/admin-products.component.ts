@@ -20,7 +20,7 @@ export class AdminProductsComponent implements OnDestroy {
 
   filter(query: string) {
     this.filteredProducts = (query) ?
-      this.products.filter(p => p.id.toLowerCase().includes(query.toLowerCase())) :
+      this.products.filter(product => product.title.toLowerCase().includes(query.toLowerCase())) :
       this.products;
   }
 
