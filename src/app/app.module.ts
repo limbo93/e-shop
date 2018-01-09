@@ -29,6 +29,7 @@ import { AdminAuthGuard } from './service/admin-auth-guard/admin.auth.guard.serv
 import { CategoryService } from './service/category/category.service';
 import { UserService } from './service/user/user.service';
 import { ProductService } from '../app/service/product/product.service';
+import { ProductCardComponent } from './product-card/product-card.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { ProductService } from '../app/service/product/product.service';
     AdminOrdersComponent,
     LoginComponent,
     ProfuctFormComponent,
-    ProductFilterComponent
+    ProductFilterComponent,
+    ProductCardComponent
   ],
   imports: [
     BrowserModule,
