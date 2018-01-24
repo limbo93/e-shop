@@ -7,14 +7,14 @@
   </div>
 
   <div *ngIf="showActions" class="card-footer">
-    <button *ngIf="getQuantity === 0; else upadteQuantity" (click)="addToCart(product)" class="btn btn-secondary btn-block">
+    <button *ngIf="getQuantity === 0; else upadteQuantity" (click)="addToCart()" class="btn btn-secondary btn-block">
       Add to cart
     </button>
 
     <ng-template #upadteQuantity>
       <div class="row no-gutters">
         <div class="col-2">
-          <button class="btn btn-secondary btn-block">-</button>
+          <button (click)="removeFromCart()" class="btn btn-secondary btn-block">-</button>
         </div>
 
         <div class="col text-center">
@@ -22,7 +22,7 @@
         </div>
 
         <div class="col-2">
-          <button class="btn btn-secondary btn-block">+</button>
+          <button (click)="addToCart()" class="btn btn-secondary btn-block">+</button>
         </div>
       </div>
     </ng-template>
